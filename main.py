@@ -8,6 +8,8 @@ Created on Tue Jan 19 12:31:59 2021
 # Import dependencies
 import csv
 
+
+
 def importData():
     """
     Read data from csv into list.
@@ -26,42 +28,67 @@ def importData():
         
         return data
     
-def sortList(dataset):
+def sortList():
     """
     Sort list in ascending order of current rent price.
     
     Args:
-        dataset::[[str]]
+        None
 
     Returns:
         sorted_data::[[str]]
 
     """
-    sorted_data = sorted(dataset, key=lambda x:int(float(x[10])))   # Sort with key of current rent price
+    DATASET = importData()  # Get dataset list
+    sorted_data = sorted(DATASET, key=lambda x:int(float(x[10])))   # Sort with key of current rent price
 
     return sorted_data
 
-def getFiveCheapest(sorted_data):
+def getFiveCheapest():
     """
     Get first five items from list sorted by rent price in ascending order.
     
     Args:
-        sorted_data::[[str]]
+        None
 
     Returns:
         None
 
     """
-    cheapest_five = sorted_data[:5]
+    sorted_data = sortList() # Get sorted dataset list
+    cheapest_five = sorted_data[:5] # Isolate first 5 items
+    
+    # Print items to console
     for item in cheapest_five:
-        print(item)
+        print(f'\n{item}')
+        
+    input('Press enter to return to menu...')
+
+
 
 # Run code if file run from command line
 if __name__ == '__main__':
-    
-    DATASET = importData()
-    #print(DATASET)  # Debugging
-    sorted_data = sortList(DATASET)
-    #print(sorted_data) # Debugging
-    getFiveCheapest(sorted_data)
+    # User input selection menu
+    while True:
+        
+        print("""
+Bink Python Developer Test | @author: Josh Stow
+(1) Get data from the 5 masts with cheapeast rent prices\n
+Select function from list...""")
+
+        # Get user input, only accept int values
+        try:
+            sel = int(input('> '))
+        except:
+            print('Error: Please select a valid function')
+            continue
+        
+        # Determine selection
+        if sel == 1:
+            getFiveCheapest()
+        # Throw error if selected option doesnt exist
+        else:
+            print('Error: Please select a valid function')
+            continue
+        
     
