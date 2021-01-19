@@ -177,7 +177,7 @@ Bink Python Developer Test | @author: Josh Stow
             sel = int(sel)
         except:
             clear()
-            print('ERROR: Please only use integer values!')
+            print('ERROR: Please select a valid function!')
             continue
         
         # Determine selection
