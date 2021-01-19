@@ -71,9 +71,21 @@ def getCheapest():
     input('\nPress enter to return to menu...')
     clear()
     
-def 
+def extractSpecificLeaseYearData():
+    """
+    Create list of masts from dataset that have a lease of 25 years.
+    
+    Args:
+        None
 
+    Returns:
+        extracted_data::[[str]]
 
+    """
+    DATASET = importData()  # Get dataset list
+    extracted_data = [row for row in DATASET if int(row[9]) == 25]  # Comprehend list of items where lease years is 25
+
+    return extracted_data
 
 # Run code if file run from command line
 if __name__ == '__main__':
