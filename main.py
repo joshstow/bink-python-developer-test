@@ -25,10 +25,26 @@ def importData():
         del data[0] # Remove header row
         
         return data
+    
+def sortList(dataset):
+    """
+    Sort list in ascending order of current rent price.
+    
+    Args:
+        dataset::[[str]]
+
+    Returns:
+        sorted_data::[[str]]
+
+    """
+    sorted_data = sorted(dataset, key=lambda x:int(float(x[10])))   # Sort with key of current rent price
+
+    return sorted_data
 
 # Run code if file run from command line
 if __name__ == '__main__':
     DATASET = importData()
-    print(data)
-        
+    print(DATASET)  # Debugging
+    sorted_data = sortList(DATASET)
+    print(sorted_data) # Debugging
     
