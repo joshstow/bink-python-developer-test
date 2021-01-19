@@ -9,12 +9,8 @@ Created on Tue Jan 19 12:31:59 2021
 import csv
 import os
 
-
-
 # Define lambda functions
 clear = lambda: os.system('cls')
-
-
 
 def importData():
     """
@@ -127,6 +123,35 @@ def outputTotalRent():
     
     print(f'\nTotal rent for all masts with a lease of 25 years:\n{sum}') # Output to console
     
+    input('\nPress enter to return to menu...')
+    clear()
+    
+def outputTenantDict():
+    """
+    Output dictionary containing keys of tenant names and values of number of masts for each tenant.
+    
+    Args:
+        None
+        
+    Returns:
+        None
+
+    """
+    DATASET = importData()  # Get dataset list
+    
+    # Fill dictionary with number of masts owned by each tenant
+    tenant_dict = {}
+    for row in DATASET:
+        if row[6] in tenant_dict:
+            tenant_dict[row[6]] += 1
+        else:
+            tenant_dict[row[6]] = 1
+    
+    # Output dictionary to console in readable format
+    print('\n')
+    for key in tenant_dict:
+        print(f'{key}: {tenant_dict[key]}')
+            
     input('\nPress enter to return to menu...')
     clear()
     
