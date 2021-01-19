@@ -184,15 +184,19 @@ Bink Python Developer Test | @author: Josh Stow
         if sel == 1:
             clear()
             getCheapest()
+            continue
         if sel == 2:
             clear()
             outputSpecificLeaseYearData()
+            continue
         if sel == 3:
             clear()
             outputTotalRent()
+            continue
         if sel == 4:
             clear()
             outputTenantDict()
+            continue
         # Throw error if selected option doesnt exist
         else:
             clear()
