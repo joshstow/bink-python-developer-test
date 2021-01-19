@@ -41,10 +41,27 @@ def sortList(dataset):
 
     return sorted_data
 
+def getFiveCheapest(sorted_data):
+    """
+    Get first five items from list sorted by rent price in ascending order.
+    
+    Args:
+        sorted_data::[[str]]
+
+    Returns:
+        None
+
+    """
+    cheapest_five = sorted_data[:5]
+    for item in cheapest_five:
+        print(item)
+
 # Run code if file run from command line
 if __name__ == '__main__':
+    
     DATASET = importData()
-    print(DATASET)  # Debugging
+    #print(DATASET)  # Debugging
     sorted_data = sortList(DATASET)
-    print(sorted_data) # Debugging
+    #print(sorted_data) # Debugging
+    getFiveCheapest(sorted_data)
     
