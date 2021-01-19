@@ -138,8 +138,10 @@ if __name__ == '__main__':
     while True:
         print("""
 Bink Python Developer Test | @author: Josh Stow
-(1) Get data from the 5 masts with cheapeast rent prices\n
-Select function from list...""")
+(1) Get data from the 5 masts with cheapeast rent prices
+(2) Get data from masts with leases of 25 years
+(3) Get total rent price of all masts with leases of 25 years
+\nSelect function from list...""")
 
         # Get user input,
         sel = input('\n> ')
@@ -156,6 +158,12 @@ Select function from list...""")
         if sel == 1:
             clear()
             getCheapest()
+        if sel == 2:
+            clear()
+            outputSpecificLeaseYearData()
+        if sel == 3:
+            clear()
+            outputTotalRent()
         # Throw error if selected option doesnt exist
         else:
             clear()
