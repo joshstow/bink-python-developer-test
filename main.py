@@ -148,7 +148,7 @@ def outputTenantDict():
             tenant_dict[row[6]] = 1
     
     # Output dictionary to console in readable format
-    print('\n')
+    print('')
     for key in tenant_dict:
         print(f'{key}: {tenant_dict[key]}')
             
@@ -166,6 +166,7 @@ Bink Python Developer Test | @author: Josh Stow
 (1) Get data from the 5 masts with cheapeast rent prices
 (2) Get data from masts with leases of 25 years
 (3) Get total rent price of all masts with leases of 25 years
+(4) Get number of masts owned by each company
 \nSelect function from list...""")
 
         # Get user input,
@@ -189,6 +190,9 @@ Bink Python Developer Test | @author: Josh Stow
         if sel == 3:
             clear()
             outputTotalRent()
+        if sel == 4:
+            clear()
+            outputTenantDict()
         # Throw error if selected option doesnt exist
         else:
             clear()
