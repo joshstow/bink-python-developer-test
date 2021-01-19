@@ -107,6 +107,29 @@ def outputSpecificLeaseYearData():
     input('\nPress enter to return to menu...')
     clear()
     
+def outputTotalRent():
+    """
+    Calculates and outputs total rent from each mast with a 25 year lease
+
+    Args:
+        None
+
+    Returns:
+        None
+        
+    """
+    extracted_data = extractSpecificLeaseYearData()
+    
+    # Sum rent costs for each item
+    sum = 0
+    for item in extracted_data:
+        sum += float(item[10])
+    
+    print(f'\nTotal rent for all masts with a lease of 25 years:\n{sum}') # Output to console
+    
+    input('\nPress enter to return to menu...')
+    clear()
+    
 # Run code if file run from command line
 if __name__ == '__main__':
     clear()
