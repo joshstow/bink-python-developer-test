@@ -87,6 +87,26 @@ def extractSpecificLeaseYearData():
 
     return extracted_data
 
+def outputSpecificLeaseYearData():
+    """
+    Output list of masts with lease of 25 years to console.
+    
+    Args:
+        None
+
+    Returns:
+        None
+
+    """
+    extracted_data = extractSpecificLeaseYearData()
+    
+    # Print items to console
+    for item in extracted_data:
+        print(f'\n{item}')
+        
+    input('\nPress enter to return to menu...')
+    clear()
+    
 # Run code if file run from command line
 if __name__ == '__main__':
     clear()
