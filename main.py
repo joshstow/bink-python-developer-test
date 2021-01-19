@@ -46,7 +46,7 @@ def sortList():
 
     """
     DATASET = importData()  # Get dataset list
-    sorted_data = sorted(DATASET, key=lambda x:int(float(x[10])))   # Sort with key of current rent price
+    sorted_data = sorted(DATASET, key=lambda x:float(x[10]))   # Sort with key of current rent price
 
     return sorted_data
 
