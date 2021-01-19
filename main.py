@@ -7,6 +7,12 @@ Created on Tue Jan 19 12:31:59 2021
 
 # Import dependencies
 import csv
+import os
+
+
+
+# Define lambda functions
+clear = lambda: os.system('cls')
 
 
 
@@ -62,33 +68,40 @@ def getFiveCheapest():
     for item in cheapest_five:
         print(f'\n{item}')
         
-    input('Press enter to return to menu...')
+    input('\nPress enter to return to menu...')
+    clear()
 
 
 
 # Run code if file run from command line
 if __name__ == '__main__':
+    clear()
+    
     # User input selection menu
     while True:
-        
         print("""
 Bink Python Developer Test | @author: Josh Stow
 (1) Get data from the 5 masts with cheapeast rent prices\n
 Select function from list...""")
 
-        # Get user input, only accept int values
+        # Get user input,
+        sel = input('\n> ')
+        
+        # Only accept int values
         try:
-            sel = int(input('> '))
+            sel = int(sel)
         except:
-            print('Error: Please select a valid function')
+            clear()
+            print('ERROR: Please only use integer values!')
             continue
         
         # Determine selection
         if sel == 1:
+            clear()
             getFiveCheapest()
         # Throw error if selected option doesnt exist
         else:
-            print('Error: Please select a valid function')
+            clear()
+            print('ERROR: Please select a valid function!')
             continue
         
-    
