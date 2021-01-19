@@ -50,7 +50,7 @@ def sortList():
 
     return sorted_data
 
-def getFiveCheapest():
+def getCheapest():
     """
     Get first five items from list sorted by rent price in ascending order.
     
@@ -70,6 +70,8 @@ def getFiveCheapest():
         
     input('\nPress enter to return to menu...')
     clear()
+    
+def 
 
 
 
@@ -98,7 +100,7 @@ Select function from list...""")
         # Determine selection
         if sel == 1:
             clear()
-            getFiveCheapest()
+            getCheapest()
         # Throw error if selected option doesnt exist
         else:
             clear()
