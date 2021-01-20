@@ -120,7 +120,7 @@ def outputTotalRent():
     for item in extracted_data:
         sum += float(item[10])
     
-    print(f'\nTotal rent for all masts with a lease of 25 years:\n{sum}') # Output to console
+    print(f'\nTotal rent for all masts with a lease of 25 years:\n£{sum}') # Output to console
     
     input('\nPress enter to return to menu...')
     clear()
