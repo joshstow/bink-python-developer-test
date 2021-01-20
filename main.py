@@ -227,7 +227,7 @@ if __name__ == '__main__':
     # User input selection menu
     while True:
         print("""
-Bink Python Developer Test | @author: Josh Stow
+Bink Python Developer Test | @author: Josh Stow\n
 (1) Get data from the 5 masts with cheapeast rent prices
 (2) Get data from masts with leases of 25 years
 (3) Get total rent price of all masts with leases of 25 years
