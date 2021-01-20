@@ -55,7 +55,7 @@ def getCheapest():
         None
 
     Returns:
-        None
+        cheapest_five::[[str]]
 
     """
     sorted_data = sortList() # Get sorted dataset list
@@ -66,6 +66,8 @@ def getCheapest():
         
     input('\nPress enter to return to menu...')
     clear()
+    
+    return cheapest_five
     
 def extractSpecificLeaseYearData():
     """
@@ -110,7 +112,7 @@ def outputTotalRent():
         None
 
     Returns:
-        None
+        sum::int
         
     """
     extracted_data = extractSpecificLeaseYearData()
@@ -125,6 +127,8 @@ def outputTotalRent():
     input('\nPress enter to return to menu...')
     clear()
     
+    return sum
+    
 def outputTenantDict():
     """
     Output dictionary containing keys of tenant names and values of number of masts for each tenant.
@@ -133,7 +137,7 @@ def outputTenantDict():
         None
         
     Returns:
-        None
+        tenant_dict::dict
 
     """
     DATASET = importData()  # Get dataset list
@@ -154,6 +158,8 @@ def outputTenantDict():
     input('\nPress enter to return to menu...')
     clear()
     
+    return tenant_dict
+    
 def outputDataBetweenDates():
     """
     Output data with lease start dates between 01/06/1999 and 31/08/2007 in DD/MM/YYYY format.
@@ -162,7 +168,7 @@ def outputDataBetweenDates():
         None
         
     Returns:
-        None
+        extracted_data::[[str]]
 
     """
     DATASET = importData()  # Get dataset list
@@ -187,6 +193,8 @@ def outputDataBetweenDates():
             
     input('\nPress enter to return to menu...')
     clear()
+    
+    return extracted_data
     
 def Prettify(list):
     """
