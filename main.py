@@ -8,6 +8,7 @@ Created on Tue Jan 19 12:31:59 2021
 # Import dependencies
 import csv
 import os
+from datetime import datetime as dt
 
 # Define lambda functions
 clear = lambda: os.system('cls')
@@ -105,7 +106,7 @@ def outputSpecificLeaseYearData():
     
 def outputTotalRent():
     """
-    Calculates and outputs total rent from each mast with a 25 year lease
+    Calculates and outputs total rent from each mast with a 25 year lease.
 
     Args:
         None
@@ -155,6 +156,41 @@ def outputTenantDict():
     input('\nPress enter to return to menu...')
     clear()
     
+def outputDataBetweenDates():
+    """
+    Output data with lease start dates between 01/06/1999 and 31/08/2007 in DD/MM/YYYY format.
+
+    Args:
+        None
+        
+    Returns:
+        None
+
+    """
+    DATASET = importData()  # Get dataset list
+    
+    # Declare constant date objects
+    DATE1 = dt(1999, 6, 1)
+    DATE2 = dt(2007, 8, 31)
+    
+    # Compare each masts start lease date
+    extracted_data = []
+    for row in DATASET:
+        temp_dates = (dt.strptime(row[7], '%d %b %Y'),dt.strptime(row[8], '%d %b %Y')) # Store converted datetime objects in tuple (start date, end date)
+        
+        # Edit row with dates formatted by DD/MM/YYYY if start date is valid
+        if temp_dates[0] > DATE1 and temp_dates[0] < DATE2:
+            row[7] = dt.strftime(temp_dates[0], '%d/%m/%Y')
+            row[8] = dt.strftime(temp_dates[1], '%d/%m/%Y')
+            extracted_data.append(row)  # Append updated row to list
+    
+    # Output items to console
+    for item in extracted_data:
+        print(f'\n{item}')
+            
+    input('\nPress enter to return to menu...')
+    clear()
+     
 # Run code if file run from command line
 if __name__ == '__main__':
     clear()
