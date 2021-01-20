@@ -78,16 +78,6 @@ class Test(unittest.TestCase):
                 ['Cottingley Towers', 'Leeds', '', '', 'LS11', 'Cottingley Towers-WYK0052', 'Everything Everywhere Ltd', '28 Jan 2008', '27 Jan 2018', '10', '12750.00'], 
                 ['Potternewton Heights - Tel App', 'Potternewton Heights', 'Potternewton Lne', 'Leeds', '', 'Potternewton Heights', 'Everything Everywhere Ltd', '04 Mar 2008', '03 Mar 2018', '10', '12750.00']]
         
-
-
-
-
-
-
-
-
-
-
 # Run code if file run from command line
 if __name__ == '__main__':
     unittest.main() # Run unit tests
