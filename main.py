@@ -225,6 +225,7 @@ Bink Python Developer Test | @author: Josh Stow
 (3) Get total rent price of all masts with leases of 25 years
 (4) Get number of masts owned by each company
 (5) Get data from masts with lease start date between 01/06/1999 and 31/08/2007
+(6) Exit program
 \nSelect function from list...""")
 
         # Get user input,
@@ -259,6 +260,9 @@ Bink Python Developer Test | @author: Josh Stow
             clear()
             outputDataBetweenDates()
             continue
+        if sel == 6:
+            clear()
+            exit()
         # Throw error if selected option doesnt exist
         else:
             clear()
