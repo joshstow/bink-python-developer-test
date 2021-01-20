@@ -62,8 +62,7 @@ def getCheapest():
     cheapest_five = sorted_data[:5] # Isolate first 5 items
     
     # Print items to console
-    for item in cheapest_five:
-        print(f'\n{item}')
+    Prettify(cheapest_five)
         
     input('\nPress enter to return to menu...')
     clear()
@@ -98,8 +97,7 @@ def outputSpecificLeaseYearData():
     extracted_data = extractSpecificLeaseYearData()
     
     # Print items to console
-    for item in extracted_data:
-        print(f'\n{item}')
+    Prettify(extracted_data)
         
     input('\nPress enter to return to menu...')
     clear()
@@ -185,8 +183,7 @@ def outputDataBetweenDates():
             extracted_data.append(row)  # Append updated row to list
     
     # Output items to console
-    for item in extracted_data:
-        print(f'\n{item}')
+    Prettify(extracted_data)
             
     input('\nPress enter to return to menu...')
     clear()
@@ -211,7 +208,7 @@ def Prettify(list):
                 print(line)
         print(f"""Unit Name: {item[5]}
 Tenant Name: {item[6]}
-Lease Dates: {item[7]} to {item[8]}
+Lease Dates: {item[7]} --> {item[8]}
 Lease Duration: {item[9]} yrs
 Current Rent: £{item[10]}""")
             
