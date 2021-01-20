@@ -190,7 +190,31 @@ def outputDataBetweenDates():
             
     input('\nPress enter to return to menu...')
     clear()
-     
+    
+def Prettify(list):
+    """
+    Outputs list of mast data to console in readable format.
+    
+    Args:
+        list::[[str]]
+
+    Returns:
+        None
+
+    """
+    # Iterate over list
+    for item in list:
+        print(f'\nProperty Name: {item[0]}\nAddress:')
+        # Loop over address elements as some are empty in specific cases
+        for line in item[1:5]:
+            if line != '':
+                print(line)
+        print(f"""Unit Name: {item[5]}
+Tenant Name: {item[6]}
+Lease Dates: {item[7]} to {item[8]}
+Lease Duration: {item[9]} yrs
+Current Rent: £{item[10]}""")
+            
 # Run code if file run from command line
 if __name__ == '__main__':
     clear()
